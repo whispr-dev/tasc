@@ -10,6 +10,8 @@ public:
     CAM cam;
     TransportTrigger transport;
 
+    std::vector<Cell*> getNeighbors(int x, int y);
+
     TASCGrid(int width, int height);
 
     void step(); // Single step of simulation

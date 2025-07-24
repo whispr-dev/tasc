@@ -10,4 +10,6 @@ public:
 
     void triggerOperation(const std::string& op);
     void evolve(); // CA evolution logic
+    void evolve(const std::vector<Cell*>& neighbors);
+    void applySelfModification(const std::string& modCommand);
 };
