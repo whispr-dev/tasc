@@ -1,6 +1,7 @@
 #pragma once
 #include "StackMachine.h"
 #include <string>
+#include <vector>
 
 class Cell {
 public:

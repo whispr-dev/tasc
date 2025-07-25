@@ -20,3 +20,40 @@ int main() {
 
     return 0;
 }
+
+void printGridTags(const TASCGrid& tasc) {
+    for (const auto& row : tasc.grid) {
+        for (const auto& cell : row) {
+            std::cout << cell.tag << "\t";
+        }
+        std::cout << "\n";
+    }
+    std::cout << "\n";
+}
+
+int main() {
+    TASCGrid tasc(5, 5);
+
+    // Set initial tags
+    tasc.grid[1][1].tag = "add";
+    tasc.grid[1][2].tag = "add";
+    tasc.grid[2][1].tag = "mul";
+    tasc.grid[3][3].tag = "mul";
+
+    std::cout << "Initial Grid Tags:\n";
+    printGridTags(tasc);
+
+    // Evolve once
+    tasc.step();
+
+    std::cout << "After 1st Evolution Step:\n";
+    printGridTags(tasc);
+
+    // Evolve again
+    tasc.step();
+
+    std::cout << "After 2nd Evolution Step:\n";
+    printGridTags(tasc);
+
+    return 0;
+}
